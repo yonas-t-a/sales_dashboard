@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 :root { --background: #fafbfc; --foreground: #171d4d; }
+/* Match the 1134px reference and scale the complete UI on wider desktops. */
+html { font-size: clamp(16px, 1.411vw, 24px); }
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

@@ -19,12 +19,12 @@ export function Sidebar() {
         {navigationItems.map(({ label, href, icon }) => {
           const active = href === "/" ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
           return (
-            <Link key={href} href={href} className={`${styles.navLink} ${active ? styles.active : ""}`} aria-current={active ? "page" : undefined}>
+            <Link key={href} href={href} aria-label={label} title={label} className={`${styles.navLink} ${active ? styles.active : ""}`} aria-current={active ? "page" : undefined}>
               <SidebarIcon name={icon} /><span>{label}</span>
             </Link>
           );
         })}
-        <Link href="/sign-out" className={`${styles.navLink} ${pathname === "/sign-out" ? styles.active : ""}`} aria-current={pathname === "/sign-out" ? "page" : undefined}>
+        <Link href="/sign-out" aria-label="Sign Out" title="Sign Out" className={`${styles.navLink} ${pathname === "/sign-out" ? styles.active : ""}`} aria-current={pathname === "/sign-out" ? "page" : undefined}>
           <SidebarIcon name="sign-out" /><span>Sign Out</span>
         </Link>
       </nav>
