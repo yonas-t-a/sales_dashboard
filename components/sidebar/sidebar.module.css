@@ -1,0 +1,31 @@
+.sidebar {
+  --accent: #6159f7;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 210px;
+  width: 210px;
+  min-height: 100dvh;
+  padding: 29px 30px 92px;
+  background: #fff;
+  box-shadow: 6px 0 28px rgb(24 31 72 / 2%);
+}
+.brand { display: flex; align-items: center; gap: 14px; color: #171d4d; font-size: 20px; font-weight: 650; letter-spacing: -.6px; }
+.brandMark { display: grid; place-items: center; width: 33px; height: 33px; flex-shrink: 0; border-radius: 5px; background: var(--accent); color: #fff; }
+.navigation { display: flex; flex-direction: column; gap: 9px; margin-top: 29px; }
+.navLink { display: flex; align-items: center; gap: 15px; min-height: 38px; padding: 10px 15px; border-radius: 11px; color: #7b7d9e; font-size: 11px; line-height: 18px; white-space: nowrap; transition: color 160ms ease, background 160ms ease, box-shadow 160ms ease; }
+.navLink svg { width: 18px; height: 18px; flex-shrink: 0; }
+.navLink:hover { background: #f1f0ff; color: var(--accent); }
+.navLink.active { background: var(--accent); color: #fff; font-weight: 600; box-shadow: 0 12px 24px rgb(28 28 62 / 8%); }
+.brand:focus-visible, .navLink:focus-visible, .proButton:focus-visible { outline: 3px solid #b2adff; outline-offset: 4px; }
+.proCard { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; min-height: 153px; margin: auto 5px 0; padding: 19px 12px 18px; border-radius: 14px; background: #6159f7; color: #fff; text-align: center; }
+.navigation { margin-bottom: 70px; }
+.proCard::before, .proCard::after { content: ""; position: absolute; z-index: -1; width: 190px; height: 190px; border-radius: 50%; background: linear-gradient(135deg, rgb(255 255 255 / 20%), rgb(255 255 255 / 2%)); }
+.proCard::before { top: -133px; right: -86px; }
+.proCard::after { bottom: -118px; left: -131px; }
+.proLogo { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 10px; background: #fff; color: var(--accent); }
+.proLogo svg { stroke-width: 3; }
+.proCard h2 { margin: 7px 0 5px; font-size: 12px; line-height: 16px; font-weight: 600; }
+.proCard p { margin: 0; font-size: 8px; line-height: 10px; color: #efedff; }
+.proButton { display: grid; place-items: center; width: 80px; min-height: 24px; margin-top: 16px; border-radius: 5px; background: #fff; color: var(--accent); font-size: 9px; font-weight: 600; transition: background 160ms ease; }
+.proButton:hover { background: #eeecff; }
+@media (prefers-reduced-motion: reduce) { .navLink, .proButton { transition: none; } }
