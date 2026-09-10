@@ -1,0 +1,272 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 0 1rem 0.8rem;
+}
+.statusTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+}
+.statusTabs button {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.6rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: #8990a9;
+  font-size: 0.56rem;
+}
+.statusTabs button span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1rem;
+  padding: 0.05rem 0.2rem;
+  border-radius: 0.3rem;
+  background: #f0f1f7;
+  font-size: 0.48rem;
+}
+.statusTabs button[aria-pressed="true"] {
+  background: #efedff;
+  color: #6159f7;
+}
+.statusTabs button[aria-pressed="true"] span {
+  background: #ddd8ff;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.45rem;
+  border-radius: 0.35rem;
+  font-size: 0.5rem;
+  white-space: nowrap;
+}
+.badge i {
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+.processing,
+.pending {
+  color: #b1831c;
+  background: #fff5dd;
+}
+.shipped {
+  color: #5f72d5;
+  background: #eeefff;
+}
+.delivered,
+.paid {
+  color: #20a777;
+  background: #e4f9ee;
+}
+.cancelled {
+  color: #d2667c;
+  background: #fff0f3;
+}
+.refunded {
+  color: #8991a9;
+  background: #f1f3f8;
+}
+.orderLink {
+  border: 0;
+  padding: 0;
+  color: #7160d9;
+  background: transparent;
+  font-size: inherit;
+  font-weight: 550;
+}
+.orderLink:hover {
+  text-decoration: underline;
+}
+.fulfillmentNotice {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid #e8e2fc;
+  border-radius: 0.7rem;
+  background: #f4f1ff;
+}
+.noticeIcon {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  border-radius: 0.5rem;
+  background: #e8e1ff;
+  color: #8e73dd;
+}
+.fulfillmentNotice strong {
+  color: #665293;
+  font-size: 0.65rem;
+  font-weight: 550;
+}
+.fulfillmentNotice p {
+  margin-top: 0.2rem;
+  color: #9a8db2;
+  font-size: 0.55rem;
+}
+.fulfillmentNotice button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: #8064c8;
+  font-size: 0.58rem;
+  white-space: nowrap;
+}
+.dialog {
+  position: fixed;
+  inset: 0;
+  width: min(35rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  overflow-y: auto;
+  border: 1px solid #eeedf5;
+  border-radius: 1rem;
+  background: #fff;
+  color: #171d4d;
+  box-shadow: 0 1rem 5rem #171d4d26;
+}
+.dialog::backdrop {
+  background: #171d4d55;
+  backdrop-filter: blur(3px);
+}
+.dialogBody {
+  padding: 1.4rem;
+}
+.dialogHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.dialogHeader h2 {
+  margin: 0.5rem 0 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 650;
+}
+.dialogHeader p {
+  color: #8990a9;
+  font-size: 0.6rem;
+}
+.detailStatuses {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 0.65rem;
+  background: #fafbfe;
+}
+.dialog h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.detailGrid strong,
+.item strong {
+  font-size: 0.65rem;
+  font-weight: 550;
+}
+.detailGrid p,
+.detailGrid address {
+  margin: 0.35rem 0 0;
+  color: #8990a9;
+  font-size: 0.58rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.detailGrid address {
+  white-space: pre-line;
+  font-style: normal;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #f1f2f7;
+}
+.item > strong {
+  margin-left: auto;
+  white-space: nowrap;
+}
+.item small {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.53rem;
+  color: #8990a9;
+}
+.productIcon {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  border-radius: 0.5rem;
+  background: #f3efff;
+  color: #9279d6;
+}
+.totals {
+  margin: 1rem 0 0 auto;
+  max-width: 15rem;
+  font-size: 0.65rem;
+}
+.totals > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  color: #8990a9;
+}
+.totals > div:last-child {
+  border-top: 1px solid #eaeaf3;
+  margin-top: 0.35rem;
+  padding-top: 0.75rem;
+  color: #171d4d;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.detailNote {
+  margin-top: 1.2rem !important;
+  color: #969bb0;
+  font-size: 0.5rem;
+  line-height: 1.5;
+}
+@container (max-width: 35rem) {
+  .fulfillmentNotice {
+    flex-wrap: wrap;
+  }
+  .fulfillmentNotice button {
+    margin-left: 2.7rem;
+  }
+}
+@media (max-width: 40rem) {
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+  .dialogBody {
+    padding: 1rem;
+  }
+}
