@@ -19,7 +19,23 @@ Ranking metrics are revenue, orders, and revenue target attainment. Equal values
 share a rank, and rank changes compare the same region and metric across periods.
 Replace `getSalesReps` with your data source when integrating a backend.
 
-## Getting Started
+## Orders
+
+Open `/orders` to browse demo orders with period, fulfillment, and payment filters.
+The overview reflects the selected period; status and payment filters narrow the
+table. Search matches order IDs, customers, email addresses, products, and SKUs.
+CSV export includes all matching rows across pages, in the current sort order.
+
+- `app/orders/page.tsx`: route and metadata.
+- `components/orders/`: order management, status badges, and accessible details dialog.
+- `components/ui/data-table.tsx`: reusable TanStack table with search, sorting, pagination, and export.
+- `data/orders.ts`: demo fixtures and order calculations using integer cents.
+- `tests/orders.test.mjs`: totals, date boundaries, payment summaries, and empty-state calculations.
+
+The demo is fixed at September 10, 2026. Order details show items, quantities,
+shipping, tax, customer information, and current statuses. No backend is connected.
+
+## Run locally
 
 First, run the development server:
 

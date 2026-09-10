@@ -10,7 +10,7 @@ import styles from "./topbar.module.css";
 export function Topbar() {
   const pathname = usePathname();
   const currentPage = navigationItems.find(({ href }) => href === "/" ? pathname === href : pathname === href || pathname.startsWith(`${href}/`));
-  const title = currentPage?.label === "order" ? "Orders" : currentPage?.label ?? (pathname === "/upgrade" ? "Dabang Pro" : pathname === "/sign-out" ? "Sign Out" : "Dabang");
+  const title = currentPage?.label ?? (pathname === "/upgrade" ? "Dabang Pro" : pathname === "/sign-out" ? "Sign Out" : "Dabang");
 
   return (
     <header className={styles.topbar}>

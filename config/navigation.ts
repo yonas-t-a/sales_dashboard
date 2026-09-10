@@ -1,7 +1,7 @@
 export const navigationItems = [
   { label: "Dashboard", href: "/", icon: "dashboard" },
   { label: "Leaderboard", href: "/leaderboard", icon: "leaderboard" },
-  { label: "order", href: "/orders", icon: "orders" },
+  { label: "Orders", href: "/orders", icon: "orders" },
   { label: "Products", href: "/products", icon: "products" },
   { label: "Sales Report", href: "/sales-report", icon: "reports" },
   { label: "Messages", href: "/messages", icon: "messages" },
