@@ -1,5 +1,24 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Sales leaderboard
+
+Open `/leaderboard` for the sales team rankings. The page reuses the dashboard layout,
+sticky sidebar, responsive scale, colors, and card styling. TanStack Table v8 handles
+search, column sorting, and pagination; Lucide supplies the icons.
+
+- `app/leaderboard/page.tsx`: route and metadata.
+- `components/leaderboard/`: page, rankings table, avatars, and styles.
+- `data/leaderboard.ts`: demo snapshots, ranking calculations, and formatting.
+- `lib/export-csv.ts`: CSV download helper.
+- `tests/leaderboard.test.mjs`: ranking, tie, region, and snapshot checks (`npm test`, Node 22.6+).
+
+The data is a fixed demo snapshot as of September 10, 2026, not a live CRM feed.
+Period and region filters apply to the summaries and rankings. Search filters the
+table; export includes every matching row in the current sort order, across pages.
+Ranking metrics are revenue, orders, and revenue target attainment. Equal values
+share a rank, and rank changes compare the same region and metric across periods.
+Replace `getSalesReps` with your data source when integrating a backend.
+
 ## Getting Started
 
 First, run the development server:
