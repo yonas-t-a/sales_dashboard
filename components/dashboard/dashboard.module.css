@@ -4,105 +4,494 @@
   color: #151546;
 }
 
-.overview { display: grid; grid-template-columns: 1.48fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
-.details { display: grid; grid-template-columns: 1.6fr 1.04fr .92fr; gap: 1.25rem; }
-.card { min-width: 0; height: 12.8125rem; padding: 1rem; border-radius: 0.875rem; background: #fff; box-shadow: 0 0.3125rem 1.25rem rgb(23 29 77 / 2.5%); }
-.card h2 { margin: 0; font-size: 0.75rem; line-height: 1.125rem; font-weight: 650; letter-spacing: -0.009375rem; }
-.cardHeader { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
-.subtitle { margin: 0.25rem 0 0; font-size: 0.5625rem; color: #7b7d9e; }
-.exportButton { display: flex; align-items: center; gap: 0.3125rem; padding: 0.3125rem 0.5625rem; border: 0.0625rem solid #d5e0ef; border-radius: 0.3125rem; background: #fff; color: #123c65; font: inherit; font-size: 0.5rem; cursor: pointer; }
-.exportButton:hover { background: #f5f6ff; border-color: #6159f7; }
-.exportButton:focus-visible { outline: 0.125rem solid #6159f7; outline-offset: 0.1875rem; }
-.statGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.125rem; margin-top: 1.6875rem; }
-.stat { display: flex; flex-direction: column; align-items: flex-start; gap: 0.3125rem; min-width: 0; padding: 0.75rem; border-radius: 0.625rem; background: var(--tint); }
-.pink { --tint: #ffe2e6; --tone: #fa527e; --track: #ffc5d4; }
-.peach { --tint: #fff4de; --tone: #ff947a; --track: #ffded5; }
-.green { --tint: #dcfce7; --tone: #00df94; --track: #a5f6d1; }
-.purple { --tint: #f3e8ff; --tone: #9855ff; --track: #d1b6ff; }
-.blue { --tint: #f0faff; --tone: #0095ff; --track: #cde8ff; }
-.orange { --tint: #fff5e5; --tone: #ff8b00; --track: #ffdab2; }
-.statIcon { display: grid; place-items: center; width: 1.5rem; height: 1.5rem; margin-bottom: 0.1875rem; border-radius: 50%; background: var(--tone); color: #fff; }
-.statIcon svg { width: .875rem; height: .875rem; }
-.exportButton svg { width: .6875rem; height: .6875rem; }
-.targetIcon svg { width: .75rem; height: .75rem; }
-.stat.green .statIcon { background: #3cd856; }
-.stat.purple .statIcon { background: #bf83ff; }
-.stat strong { font-size: 0.875rem; line-height: 1.1875rem; font-weight: 650; }
-.statLabel { color: #37445b; font-size: 0.5625rem; white-space: nowrap; }
-.statChange { color: #4079ff; font-size: 0.4375rem; white-space: nowrap; }
-.chart { display: block; width: 100%; min-height: 0; flex: 1; overflow: visible; }
-.gridLine { stroke: #f2f3f6; stroke-width: .7; }
-.axisLabel { fill: #8da3c2; font-size: 6.5px; }
-.monthLabel { fill: #59647c; font-size: 6px; }
-.legend { display: flex; align-items: center; justify-content: center; gap: 1.125rem; }
-.legendLabel { display: flex; align-items: center; gap: 0.25rem; color: #303953; font-size: 0.4375rem; white-space: nowrap; }
-.legendLabel i { width: 0.375rem; height: 0.375rem; flex-shrink: 0; border-radius: 50%; }
-.visitors, .revenue, .satisfaction, .targets, .volume, .countryMap { display: flex; flex-direction: column; }
-.visitors { padding: 1rem 0.8125rem 0.8125rem; }
-.visitors .legend { gap: 0.625rem; }
-.visitors .legendLabel { font-size: 0.40625rem; gap: 0.1875rem; }
-.visitors .legendLabel i { border-radius: 0.0625rem; }
-.visitorInteraction { cursor: crosshair; touch-action: pan-y; }
-.visitorInteraction:focus-visible { outline: none; stroke: #b2adff; stroke-width: 1; stroke-dasharray: 3 3; }
-.revenue .legend { margin-top: 0.125rem; gap: 1.5625rem; }
-.satisfaction { padding: 0.8125rem 0.5rem 0.75rem; }
-.satisfaction h2 { padding-left: 0.3125rem; }
-.chartFooter { padding-top: 0.625rem; border-top: 0.0625rem solid #f5f5f8; }
-.chartFooter .legend { gap: 0.75rem; }
-.legendWithValue + .legendWithValue { border-left: 0.0625rem solid #dce3ed; padding-left: 0.75rem; }
-.legendWithValue .legendLabel { color: #8da3c2; font-size: 0.5625rem; }
-.legendWithValue strong { display: block; padding: 0.1875rem 0 0 0.625rem; font-size: 0.5rem; font-weight: 500; }
-.targets { padding: 0.8125rem 0.625rem 0.75rem; }
-.targetLegend { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.25rem; }
-.targetRow { display: flex; align-items: center; gap: 0.4375rem; }
-.targetIcon { display: grid; place-items: center; width: 1.3125rem; height: 1.3125rem; border-radius: 0.25rem; background: var(--tint); color: var(--tone); }
-.targetRow strong { display: block; font-size: 0.4375rem; font-weight: 600; }
-.targetRow small { display: block; margin-top: 0.125rem; color: #7b7d9e; font-size: 0.375rem; }
-.targetValue { margin-left: auto; padding-right: 25%; color: var(--tone); font-size: 0.5rem; }
-.targetRow.green .targetValue { color: #13b453; }
-.products { padding: 0.8125rem 0 0; overflow: hidden; }
-.products h2 { padding: 0 1rem 0.1875rem; }
-.tableScroll { overflow-x: auto; }
-.products table { width: 100%; border-collapse: collapse; text-align: left; white-space: nowrap; }
-.products th { padding: 0.5rem 0.5rem; color: #8da3c2; font-size: 0.4375rem; font-weight: 400; }
-.products td { height: 2.25rem; padding: 0.4375rem 0.5rem; border-top: 0.0625rem solid #f0f2f7; color: #424a73; font-size: 0.5rem; }
-.products th:first-child, .products td:first-child { padding-left: 1rem; }
-.products th:last-child, .products td:last-child { padding-right: 1.25rem; padding-left: 1.25rem; text-align: right; }
-.products th:nth-child(3) { width: 32%; }
-.progress { height: 0.1875rem; min-width: 3.125rem; overflow: hidden; border-radius: 0.1875rem; background: var(--track); }
-.progress span { display: block; height: 100%; border-radius: inherit; background: var(--tone); }
-.salesBadge { display: inline-block; min-width: 1.8125rem; border: 0.0625rem solid var(--tone); border-radius: 0.25rem; padding: 0.0625rem 0.3125rem; background: var(--tint); color: var(--tone); font-size: 0.4375rem; }
-.countryMap { padding: 1rem 0.75rem 0.625rem; }
-.countryMap h2 { padding-left: 0.125rem; }
-.mapImage { position: relative; flex: 1; min-height: 0; margin-top: 0.375rem; }
-.worldMap { position: absolute; inset: 0; display: block; width: 100%; height: 100%; overflow: visible; }
-.mapLand, .mapCountry { stroke: #fff; stroke-width: .5; stroke-linejoin: round; }
-.mapCountry { cursor: pointer; }
-.mapCountry:hover, .mapCountry:focus-visible, .mapCountry[aria-pressed="true"] { stroke: #171d4d; stroke-width: 2; outline: none; filter: brightness(.94); }
-.mapControls { display: flex; align-items: center; justify-content: space-between; gap: 0.375rem; min-height: 1.8125rem; margin-top: 0.25rem; border-top: 0.0625rem solid #f0f2f7; padding-top: 0.3125rem; }
-.mapControls select { min-width: 0; max-width: 65%; padding: 0.1875rem 0.125rem; border: 0.0625rem solid #e6e8f0; border-radius: 0.25rem; color: #424a73; background: #fff; font: inherit; font-size: 0.5rem; cursor: pointer; }
-.mapControls select:focus-visible { outline: 0.125rem solid #6159f7; outline-offset: 0.125rem; }
-.mapResult { display: flex; flex-direction: column; align-items: flex-end; color: #7b7d9e; font-size: 0.4375rem; }
-.mapResult strong { color: #171d4d; font-size: 0.625rem; font-weight: 600; }
-.volume { padding: 1rem 0.75rem 0.625rem; }
-.volume .chartFooter { margin: 0 -0.75rem; }
+.overview {
+  display: grid;
+  grid-template-columns: 1.48fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.details {
+  display: grid;
+  grid-template-columns: 1.6fr 1.04fr 0.92fr;
+  gap: 1.25rem;
+}
+.card {
+  min-width: 0;
+  height: 12.8125rem;
+  padding: 1rem;
+  border-radius: 0.875rem;
+  background: #fff;
+  box-shadow: 0 0.3125rem 1.25rem rgb(23 29 77 / 2.5%);
+}
+.card h2 {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 650;
+  letter-spacing: -0.009375rem;
+}
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.5625rem;
+  color: #7b7d9e;
+}
+.exportButton {
+  display: flex;
+  align-items: center;
+  gap: 0.3125rem;
+  padding: 0.3125rem 0.5625rem;
+  border: 0.0625rem solid #d5e0ef;
+  border-radius: 0.3125rem;
+  background: #fff;
+  color: #123c65;
+  font: inherit;
+  font-size: 0.5rem;
+  cursor: pointer;
+}
+.exportButton:hover {
+  background: #f5f6ff;
+  border-color: #6159f7;
+}
+.exportButton:focus-visible {
+  outline: 0.125rem solid #6159f7;
+  outline-offset: 0.1875rem;
+}
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.125rem;
+  margin-top: 1.6875rem;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3125rem;
+  min-width: 0;
+  padding: 0.75rem;
+  border-radius: 0.625rem;
+  background: var(--tint);
+}
+.pink {
+  --tint: #ffe2e6;
+  --tone: #fa527e;
+  --track: #ffc5d4;
+}
+.peach {
+  --tint: #fff4de;
+  --tone: #ff947a;
+  --track: #ffded5;
+}
+.green {
+  --tint: #dcfce7;
+  --tone: #00df94;
+  --track: #a5f6d1;
+}
+.purple {
+  --tint: #f3e8ff;
+  --tone: #9855ff;
+  --track: #d1b6ff;
+}
+.blue {
+  --tint: #f0faff;
+  --tone: #0095ff;
+  --track: #cde8ff;
+}
+.orange {
+  --tint: #fff5e5;
+  --tone: #ff8b00;
+  --track: #ffdab2;
+}
+.statIcon {
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: 0.1875rem;
+  border-radius: 50%;
+  background: var(--tone);
+  color: #fff;
+}
+.statIcon svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+.exportButton svg {
+  width: 0.6875rem;
+  height: 0.6875rem;
+}
+.targetIcon svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+.stat.green .statIcon {
+  background: #3cd856;
+}
+.stat.purple .statIcon {
+  background: #bf83ff;
+}
+.stat strong {
+  font-size: 0.875rem;
+  line-height: 1.1875rem;
+  font-weight: 650;
+}
+.statLabel {
+  color: #37445b;
+  font-size: 0.5625rem;
+  white-space: nowrap;
+}
+.statChange {
+  color: #4079ff;
+  font-size: 0.4375rem;
+  white-space: nowrap;
+}
+.chart {
+  display: block;
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  overflow: visible;
+}
+.gridLine {
+  stroke: #f2f3f6;
+  stroke-width: 0.7;
+}
+.axisLabel {
+  fill: #8da3c2;
+  font-size: 6.5px;
+}
+.monthLabel {
+  fill: #59647c;
+  font-size: 6px;
+}
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.125rem;
+}
+.legendLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #303953;
+  font-size: 0.4375rem;
+  white-space: nowrap;
+}
+.legendLabel i {
+  width: 0.375rem;
+  height: 0.375rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+.visitors,
+.revenue,
+.satisfaction,
+.targets,
+.volume,
+.countryMap {
+  display: flex;
+  flex-direction: column;
+}
+.visitors {
+  padding: 1rem 0.8125rem 0.8125rem;
+}
+.visitors .legend {
+  gap: 0.625rem;
+}
+.visitors .legendLabel {
+  font-size: 0.40625rem;
+  gap: 0.1875rem;
+}
+.visitors .legendLabel i {
+  border-radius: 0.0625rem;
+}
+.visitorInteraction {
+  cursor: crosshair;
+  touch-action: pan-y;
+}
+.visitorInteraction:focus-visible {
+  outline: none;
+  stroke: #b2adff;
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+.revenue .legend {
+  margin-top: 0.125rem;
+  gap: 1.5625rem;
+}
+.satisfaction {
+  padding: 0.8125rem 0.5rem 0.75rem;
+}
+.satisfaction h2 {
+  padding-left: 0.3125rem;
+}
+.chartFooter {
+  padding-top: 0.625rem;
+  border-top: 0.0625rem solid #f5f5f8;
+}
+.chartFooter .legend {
+  gap: 0.75rem;
+}
+.legendWithValue + .legendWithValue {
+  border-left: 0.0625rem solid #dce3ed;
+  padding-left: 0.75rem;
+}
+.legendWithValue .legendLabel {
+  color: #8da3c2;
+  font-size: 0.5625rem;
+}
+.legendWithValue strong {
+  display: block;
+  padding: 0.1875rem 0 0 0.625rem;
+  font-size: 0.5rem;
+  font-weight: 500;
+}
+.targets {
+  padding: 0.8125rem 0.625rem 0.75rem;
+}
+.targetLegend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+.targetRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4375rem;
+}
+.targetIcon {
+  display: grid;
+  place-items: center;
+  width: 1.3125rem;
+  height: 1.3125rem;
+  border-radius: 0.25rem;
+  background: var(--tint);
+  color: var(--tone);
+}
+.targetRow strong {
+  display: block;
+  font-size: 0.4375rem;
+  font-weight: 600;
+}
+.targetRow small {
+  display: block;
+  margin-top: 0.125rem;
+  color: #7b7d9e;
+  font-size: 0.375rem;
+}
+.targetValue {
+  margin-left: auto;
+  padding-right: 25%;
+  color: var(--tone);
+  font-size: 0.5rem;
+}
+.targetRow.green .targetValue {
+  color: #13b453;
+}
+.products {
+  padding: 0.8125rem 0 0;
+  overflow: hidden;
+}
+.products h2 {
+  padding: 0 1rem 0.1875rem;
+}
+.tableScroll {
+  overflow-x: auto;
+}
+.products table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+.products th {
+  padding: 0.5rem 0.5rem;
+  color: #8da3c2;
+  font-size: 0.4375rem;
+  font-weight: 400;
+}
+.products td {
+  height: 2.25rem;
+  padding: 0.4375rem 0.5rem;
+  border-top: 0.0625rem solid #f0f2f7;
+  color: #424a73;
+  font-size: 0.5rem;
+}
+.products th:first-child,
+.products td:first-child {
+  padding-left: 1rem;
+}
+.products th:last-child,
+.products td:last-child {
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+  text-align: right;
+}
+.products th:nth-child(3) {
+  width: 32%;
+}
+.progress {
+  height: 0.1875rem;
+  min-width: 3.125rem;
+  overflow: hidden;
+  border-radius: 0.1875rem;
+  background: var(--track);
+}
+.progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--tone);
+}
+.salesBadge {
+  display: inline-block;
+  min-width: 1.8125rem;
+  border: 0.0625rem solid var(--tone);
+  border-radius: 0.25rem;
+  padding: 0.0625rem 0.3125rem;
+  background: var(--tint);
+  color: var(--tone);
+  font-size: 0.4375rem;
+}
+.countryMap {
+  padding: 1rem 0.75rem 0.625rem;
+}
+.countryMap h2 {
+  padding-left: 0.125rem;
+}
+.mapImage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  margin-top: 0.375rem;
+}
+.worldMap {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.mapLand,
+.mapCountry {
+  stroke: #fff;
+  stroke-width: 0.5;
+  stroke-linejoin: round;
+}
+.mapCountry {
+  cursor: pointer;
+}
+.mapCountry:hover,
+.mapCountry:focus-visible,
+.mapCountry[aria-pressed="true"] {
+  stroke: #171d4d;
+  stroke-width: 2;
+  outline: none;
+  filter: brightness(0.94);
+}
+.mapControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.375rem;
+  min-height: 1.8125rem;
+  margin-top: 0.25rem;
+  border-top: 0.0625rem solid #f0f2f7;
+  padding-top: 0.3125rem;
+}
+.mapControls select {
+  min-width: 0;
+  max-width: 65%;
+  padding: 0.1875rem 0.125rem;
+  border: 0.0625rem solid #e6e8f0;
+  border-radius: 0.25rem;
+  color: #424a73;
+  background: #fff;
+  font: inherit;
+  font-size: 0.5rem;
+  cursor: pointer;
+}
+.mapControls select:focus-visible {
+  outline: 0.125rem solid #6159f7;
+  outline-offset: 0.125rem;
+}
+.mapResult {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #7b7d9e;
+  font-size: 0.4375rem;
+}
+.mapResult strong {
+  color: #171d4d;
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+.volume {
+  padding: 1rem 0.75rem 0.625rem;
+}
+.volume .chartFooter {
+  margin: 0 -0.75rem;
+}
 
 @container (max-width: 49.375rem) {
-  .overview { grid-template-columns: 1fr; }
-  .details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .visitors { height: 14.0625rem; }
-  .revenue { grid-column: 1 / -1; height: 15rem; }
-  .products { grid-column: 1 / -1; }
+  .overview {
+    grid-template-columns: 1fr;
+  }
+  .details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .visitors {
+    height: 14.0625rem;
+  }
+  .revenue {
+    grid-column: 1 / -1;
+    height: 15rem;
+  }
+  .products {
+    grid-column: 1 / -1;
+  }
 }
 
 @container (max-width: 27.5rem) {
-  .details { grid-template-columns: minmax(0, 1fr); }
-  .statGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.625rem; margin-top: 1.125rem; }
-  .sales { height: auto; }
-  .card { min-width: 0; }
-  .statLabel, .statChange { white-space: normal; }
-  .visitors .legend { flex-wrap: wrap; gap: 0.3125rem; }
-  .card h2 { font-size: 0.6875rem; }
+  .details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .statGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.625rem;
+    margin-top: 1.125rem;
+  }
+  .sales {
+    height: auto;
+  }
+  .card {
+    min-width: 0;
+  }
+  .statLabel,
+  .statChange {
+    white-space: normal;
+  }
+  .visitors .legend {
+    flex-wrap: wrap;
+    gap: 0.3125rem;
+  }
+  .card h2 {
+    font-size: 0.6875rem;
+  }
 }
 
-@media (max-width: 40.625rem) { .dashboard { padding: 0.75rem; } }
+@media (max-width: 40.625rem) {
+  .dashboard {
+    padding: 0.75rem;
+  }
+}
