@@ -35,6 +35,21 @@ CSV export includes all matching rows across pages, in the current sort order.
 The demo is fixed at September 10, 2026. Order details show items, quantities,
 shipping, tax, customer information, and current statuses. No backend is connected.
 
+## Products
+
+Open `/products` to browse and manage the demo catalog. It reuses the shared
+TanStack table, CSV export, dashboard styles, and Lucide icons. Search matches
+names, SKUs, and categories; filters cover catalog status, category, and inventory.
+Low stock means 1–10 units. Summary alerts count only active products.
+
+- `components/products/`: catalog page, product editor, category icons, and browser store.
+- `data/products.ts`: fixtures, stock summaries, and validation.
+- `tests/products.test.mjs`: thresholds, summaries, unique SKUs, and numeric validation.
+
+Add/edit changes are saved under `dabang-products-v1` in this browser’s local
+storage and survive navigation and reloads. They do not update the independent
+dashboard or historical order demo fixtures. There is no backend synchronization.
+
 ## Run locally
 
 First, run the development server:
