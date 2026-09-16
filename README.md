@@ -50,6 +50,22 @@ Add/edit changes are saved under `dabang-products-v1` in this browser’s local
 storage and survive navigation and reloads. They do not update the independent
 dashboard or historical order demo fixtures. There is no backend synchronization.
 
+## Sales Report
+
+`/sales-report` derives its metrics from the existing demo orders, using inclusive
+date presets and sales-channel filters. Product sales include paid, non-cancelled
+orders and exclude shipping and tax. The payment breakdown adds those amounts back
+to reconcile with the Orders page. Dates refer to order placement, not settlement.
+
+- `data/sales-report.ts`: aggregation, daily zero-filling, and product/channel summaries.
+- `components/sales-report/`: report page, interactive trend chart, and styles.
+- `tests/sales-report.test.mjs`: totals, date boundaries, channel partitions, and empty data.
+
+Download report exports the selected period's totals, daily values, and products;
+the table's Export button exports only its matching, sorted product rows. The
+snapshot remains fixed at September 10, 2026. Catalog edits do not alter these
+historical demo orders.
+
 ## Run locally
 
 First, run the development server:

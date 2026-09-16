@@ -1,0 +1,43 @@
+.primary { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; padding: .6rem .85rem; border: 1px solid #6159f7; border-radius: .5rem; background: #6159f7; color: #fff; font-size: .62rem; cursor: pointer; white-space: nowrap; }
+.primary:hover { background: #5148e5; }
+.reportFilters { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .7rem; }
+.reportFilters > p { color: #9299ae; font-size: .58rem; }
+.chartGrid { display: grid; grid-template-columns: 1.8fr 1fr; gap: 1rem; }
+.panel { min-width: 0; padding: 1rem; border-radius: .875rem; background: #fff; box-shadow: 0 .3125rem 1.25rem rgb(23 29 77 / 2.5%); }
+.panelHeader { display: flex; align-items: flex-start; justify-content: space-between; gap: .6rem; }
+.panel h2, .breakdown h2 { font-size: .8rem; font-weight: 650; }
+.panelHeader p, .breakdown p { margin-top: .3rem; color: #9299ae; font-size: .56rem; line-height: 1.5; }
+.tabs { display: flex; padding: .15rem; gap: .15rem; border: 1px solid #eeedf5; border-radius: .4rem; }
+.tabs button { padding: .3rem .5rem; border: 0; border-radius: .3rem; background: transparent; color: #8b91ab; font-size: .52rem; }
+.tabs button[aria-pressed="true"] { background: #efedff; color: #6159f7; }
+.panel .trend { display: block; width: 100%; height: 12rem; margin-top: .65rem; }
+.interaction { cursor: crosshair; touch-action: pan-y; }
+.interaction:focus-visible { outline: none; stroke: #c2bafa; stroke-width: 1; }
+.chartCaption { display: flex; align-items: center; justify-content: center; gap: .35rem; color: #9299ae; font-size: .5rem; }
+.chartCaption i, .channelLegend i { display: inline-block; width: .4rem; height: .4rem; border-radius: 50%; background: #6159f7; flex-shrink: 0; }
+.donut { display: grid; place-items: center; width: 8.25rem; height: 8.25rem; margin: 1rem auto; border-radius: 50%; }
+.donut > div { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .35rem; width: 6.6rem; height: 6.6rem; border-radius: 50%; background: white; }
+.donut small { color: #9299ae; font-size: .5rem; }
+.donut strong { font-size: 1rem; font-weight: 650; }
+.channelLegend { display: flex; flex-direction: column; gap: .7rem; }
+.channelLegend > div { display: flex; align-items: center; gap: .6rem; font-size: .54rem; }
+.channelLegend span { display: flex; align-items: center; gap: .35rem; color: #79819e; }
+.channelLegend strong { margin-left: auto; font-weight: 550; }
+.channelLegend small { min-width: 2.2rem; color: #9299ae; text-align: right; }
+.breakdown { display: flex; align-items: center; gap: 1.25rem; padding: 1rem; border: 1px solid #ebe7fc; border-radius: .75rem; background: #f7f5ff; }
+.breakdown dl { display: flex; flex: 1; justify-content: space-evenly; gap: 1rem; }
+.breakdown dt { color: #9299ae; font-size: .5rem; }
+.breakdown dd { margin-top: .35rem; font-size: .72rem; font-weight: 550; }
+.breakdown dl > div:last-child dd { color: #6159f7; }
+.breakdown a { display: flex; align-items: center; gap: .3rem; color: #8474c3; font-size: .55rem; white-space: nowrap; }
+.share { display: flex; align-items: center; gap: .6rem; }
+.share span { min-width: 2.5rem; }
+.share meter { appearance: none; width: 4rem; height: .25rem; border: 0; border-radius: 1rem; background: #eeebff; }
+.share meter::-webkit-meter-bar { height: .25rem; border: 0; background: #eeebff; }
+.share meter::-webkit-meter-optimum-value { background: #a18bff; }
+.share meter::-moz-meter-bar { background: #a18bff; }
+.methodology { color: #9299ae; font-size: .55rem; line-height: 1.7; }
+.methodology summary { cursor: pointer; color: #7a829c; }
+.methodology p { margin-top: .5rem; max-width: 50rem; }
+@container (max-width: 48rem) { .chartGrid { grid-template-columns: 1fr; } .breakdown { flex-wrap: wrap; } .breakdown dl { flex-basis: 100%; justify-content: space-between; } }
+@container (max-width: 29rem) { .reportFilters > div { flex-wrap: wrap; } .breakdown dl { display: grid; grid-template-columns: 1fr 1fr; } .panelHeader { flex-wrap: wrap; } .panel .trend { height: 10rem; } }

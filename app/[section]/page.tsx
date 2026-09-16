@@ -5,7 +5,7 @@ const pages = [
   ...navigationItems
     .filter(
       (item) =>
-        !["/", "/leaderboard", "/orders", "/products"].includes(item.href),
+        !["/", "/leaderboard", "/orders", "/products", "/sales-report"].includes(item.href),
     )
     .map((item) => ({
       slug: item.href.slice(1),
