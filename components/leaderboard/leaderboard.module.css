@@ -9,9 +9,8 @@
 .page p {
   margin: 0;
 }
-.page button,
-.page select,
-.page input {
+/* Keep this reset below component styles regardless of route CSS load order. */
+:where(.page) :where(button, select, input) {
   font: inherit;
 }
 .page button,
