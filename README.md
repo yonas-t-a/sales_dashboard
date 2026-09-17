@@ -66,7 +66,22 @@ the table's Export button exports only its matching, sorted product rows. The
 snapshot remains fixed at September 10, 2026. Catalog edits do not alter these
 historical demo orders.
 
-## Run locally
+## Messages
+
+`/messages` provides a searchable demo inbox with unread, starred, and archived
+views. Opening a conversation marks it read; toolbar controls change read/starred
+state and archive or restore it. Mobile layouts show the inbox and thread separately.
+
+- `data/messages.ts`: contacts, sample conversations, filtering, and stored-data validation.
+- `components/messages/`: inbox, conversation view, compose dialog, and browser store.
+- `tests/messages.test.mjs`: folder/search behavior and data/message validation.
+
+Drafts, replies, new conversations, and organization changes persist under
+`dabang-messages-v1` in local storage. Replies and new messages are saved locally
+only; no email, messaging provider, or external delivery is connected. Stored changes
+sync between tabs. Timestamps are shown in UTC.
+
+## Development
 
 First, run the development server:
 
